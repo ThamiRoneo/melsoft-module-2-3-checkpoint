@@ -9,14 +9,14 @@
 const fullName = 'Thami Roneo Sithole';
 
 // #2: the variable is of primitive data type - Number. The reason I chose to declare my variable with 'const'
-// it is because my age will not change or be redeclared to another value in this scope. 
+// it is because my age will not change or be redeclared to another value in this scope.
 const myAge = 30;
 
 // #3: the variable is of primitive data type - Boolean. I chose to declare my variable with 'let' because it likely to be  redeclared
 // to 'false' as soon as I find myself not enjoying JavaScript in this scope.
 let isEnjoyingJavascript = true;
 
-// #4: the variable is of primitive data type - Number. I chose to declare the variable with 'const' because my favourite temperature cannot be 
+// #4: the variable is of primitive data type - Number. I chose to declare the variable with 'const' because my favourite temperature cannot be
 // redeclared with another value in this scope.
 const favourateTemperature = 30.00;
 
@@ -28,7 +28,7 @@ let number = Number('not a number');
 // to a different infinity value in this scope.
 let valueInfinity = 1 / 0;
 
-// #7: the variable is of a primitive data type - number, I declared the variable with keyword 'const' so that cannot be 
+// #7: the variable is of a primitive data type - number, I declared the variable with keyword 'const' so that cannot be
 // reassigned and to alwways refer to the same value when called.
 const number1 = Number.MAX_SAFE_INTEGER;
 
@@ -61,7 +61,7 @@ engines stored values as 32-bit chunk where lower bits indicated the type tag - 
 and null was all zeros (null pointer). Then, null inherited the 0 type tag, causing typeof to incorrectly identify it as an object.
 
 typeof NaN return 'number' because NaN is a special value defined by the IEEE 754 floating-point standard,
-not a distinct data type. NaN is a valid bit pattern within that numeric format, the internal type check classifies it as Number, 
+not a distinct data type. NaN is a valid bit pattern within that numeric format, the internal type check classifies it as Number,
 making typeof NaN return 'number'.
 */
 
@@ -78,7 +78,7 @@ console.log(typeof Number('123'));           // number
 console.log(parseInt('123'));                // results: 123
 console.log(typeof parseInt('123'));         // number
 
-console.log(parseFloat('123'));              // rsults: 123  
+console.log(parseFloat('123'));              // rsults: 123
 console.log(typeof parseFloat('123'));       // undefined
 
 console.log(Boolean('123'));                 // results: 123
@@ -94,7 +94,7 @@ console.log(typeof Number('3.14'));           // number
 console.log(parseInt('3.14'));              // results: 3
 console.log(typeof parseInt('3.14'));       // number
 
-console.log(parseFloat('3.14'));         // results: 3.14 
+console.log(parseFloat('3.14'));         // results: 3.14
 console.log(typeof parseFloat('3.14'));     // number
 
 console.log(Boolean('3.14'));               // results: true
@@ -289,7 +289,7 @@ console.log(typeof '12');  // string
 // one is converting the string '42abc' to a number, and the other is converting the very same string to an integer 42.
 
 // #2: I would reach for parseFloat instead of parseInt in real code when I want to convert an integer variable into a float type
-// for money conversion. 
+// for money conversion.
 // Scenario: For calculating total interest paid to a client, in the calculation for interest, the interest rate value was used
 // as an integer 12 instead of 0.12, meaning the final calculation will be wrong and that would cost money.
 
@@ -355,4 +355,18 @@ if (totalCart > 500) {
 // logging the results
 console.log(`The total cart is: R ${totalCart.toFixed(2)}\nCheckout total: R ${checkoutTotal.toFixed(2)}`)
 
+// #4 Realistic example: A user can be assigned to a Student Tier on a website IF they are at least 18 years or older AND
+// registered on public higher institution OR registered on private institution.
+// storing age value in a const variable age
+const age = 18;
+// storing a boolean value to a boolean variable
+let isOnPublicInstitution = true;
+// storing age value in a const variable age
+let isOnPrivateInstitution = false;
 
+// verifying if whether a user gets to be assigned to a student tier 
+const studentTierVerification = age >= 18 && isOnPublicInstitution || isOnPrivateInstitution ? 'You have successfully got assigned to Student Tier' :
+  'Verification fail! you do not meet all the of criteria requirements';
+
+// logging the results of the verification
+console.log(studentTierVerification);
