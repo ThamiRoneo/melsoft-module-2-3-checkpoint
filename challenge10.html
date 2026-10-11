@@ -6,6 +6,41 @@
 	<title>Challenge10</title>
 </head>
 <body>
-	
+	<script>
+ // declaring variables
+	let greeting;
+	let name;
+	let age;
+	let membershipTier;
+	let subscription = false;
+	let summary;
+
+	// assigning variables
+	greeting = window.alert("Hello, Welcome to JS user interaction :)");
+	name = window.prompt('What is your name?');
+	name = name ? name : 'Guest';                   // sets a default name
+
+	age = window.prompt('How old are you?');
+	age = age != NaN && (age >= 1 && age < 60) ? Number(age) : prompt('How old are you?');  // age validator
+
+	subscription = window.confirm('Do you want to subscribe to our newsletter?');
+
+	membershipTier = age < 18 ? 'Youth' : age >= 18 && age <= 59 ? 'Adult' : 'Senior';
+
+	summary = window.alert(`Name: ${name}\nAge: ${age}\nMembership Tier: ${membershipTier}\nNewsletter subscription status: ${subscription}`)
+	console.log(summary);
+
+	// Interview answers:
+	// #1: Blocking refers to state where if the user does not interact with the dialog of either alert/confirm/prompt the browser wont
+	// process any other code. Nothing gets processed until the dialog is canceled or interacted with.
+	// Blocking is a problem for modern web apps because a blocking dialog freezes the entire application, dialogs are disruptpive and disturbs
+	// user's workflow, and for security the blocking allows malicious sites to lock up browser by looping alerts.
+
+	// #2: In a real modern applications developers can use in-app toast notifications instead of bloacking dialogs.
+
+	// #3: window.prompt() returns nothing (null) and it exists its state immediately when the user clicks 'Cancel' and when the user leaves the field
+	// blank and clicks Ok it returns an empty string ("").
+
+	</script>
 </body>
 </html>

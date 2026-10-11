@@ -314,5 +314,19 @@ const minutes = combinedMinutes % 60;
 // logging the time spend workiing on a project in hours and  minutes
 console.log(`The developers' time combined for 3 months: ${hours} hours ${minutes} minutes`);
 
+// #2 Realistic example: Calculate an e-commerce cart total, if the user added items worth R1200. With 15% vat and 10% descount.
+// declared and assigned cartTotal variable with 1200
+let cartTotal = 1200;
+// declared and assigned vatTax rate variable with 15%
+let vatTax = 0.15;
+// declared and assigned discount variable with 10%
+let discount = 0.10;
 
+// calculating cartTotal - discount
+cartTotal -= (cartTotal * (1 - discount));
 
+// calculating cartTotal + vat tax amount
+cartTotal *= (1 + vatTax);
+
+// logging the the total cart amount with tax included
+console.log(`The cart total for your items is: R ${cartTotal.toFixed(2)}`);
