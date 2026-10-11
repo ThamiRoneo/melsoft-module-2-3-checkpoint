@@ -370,3 +370,18 @@ const studentTierVerification = age >= 18 && isOnPublicInstitution || isOnPrivat
 
 // logging the results of the verification
 console.log(studentTierVerification);
+
+// #5 Realistic example: Convert a string from an inputYearOfBirth from a form field on a Generation Identity site to a number causing
+// unary + operator. the evaluate the converted input using a boolean flag !.
+
+// storing a string value into a variable
+let inputYearOfBirth = '1996';
+// declaring a variable and assigning a conversion of a string to a number using unary + operator
+let inputNumber = +inputYearOfBirth;
+
+// evaluating the converted variable to toggle
+if (!(inputNumber > 2000)) {
+  console.log('isMillennial'); //logging the result should the condition be met
+} else {
+  console.log('Gen Z') //logging the alternative result should the condition fail
+}
