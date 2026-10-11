@@ -398,3 +398,18 @@ const playerSkill = skillsLevelBadge == 'super pro' ? 'Super Pro level' :
 // looging the result of the player skill
 console.log(playerSkill);
 
+// #7 Realistic example: Build a a game play summary with 'Hey Doomsday007, you have the best high score 147856XP.' once with +
+// and once with template literal. Comment on which is better and why.
+// declared and assigned variable with strings for template literal
+const playerName = 'Doomsday007';
+const highScore = '147856'
+// declared and assigned variables with string for concatenation
+let string1 = 'Hey Doomsday007';
+let string2 = 'you have the best high score 147856XP';
+
+// concatenation with +
+result1 = string1 + ', ' + string2;
+console.log(result1);
+
+// concationation with template literal
+console.log(`Hey ${playerName}, you have the best high score ${highScore}XP`);
