@@ -320,10 +320,10 @@ let cartTotal = 1200;
 // declared and assigned vatTax rate variable with 15%
 let vatTax = 0.15;
 // declared and assigned discount variable with 10%
-let discount = 0.10;
+let discounted = 0.10;
 
 // calculating cartTotal - discount
-cartTotal -= (cartTotal * (1 - discount));
+cartTotal -= (cartTotal * (1 - discounted));
 
 // calculating cartTotal + vat tax amount
 cartTotal *= (1 + vatTax);
@@ -420,7 +420,9 @@ console.log(`Hey ${playerName}, you have the best high score ${highScore}XP`);
 Prefix (++x): console.log(++x) // 5 (increments first, then returns 5)
 Postfix (x++): console.log(x++) // 5 (returns 4 first, then increments to 5)
 
-2. 
+2. Unit conversion like I had used in my realistic example for converting hours into minutes.
+   Another real-world use is cyclic indexing and wrapping - to allow values to loop within a fixed range. like for example
+   wrapping array indices to create circular buffers. 
 */
 
 /******************************************************
@@ -1045,3 +1047,11 @@ var seniorDiscount = customerAge >= 60 ? total * 0.05 : null;
 var finalTotal = total - seniorDiscount;
 console.log("Total: R" + finalTotal.toFixed(2));
 // === END OF SCRIPT ===
+
+/*****************************************************
+*           Challenge 12  - Self Reflection          *
+*****************************************************/
+
+/*
+1. 
+*/
