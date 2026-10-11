@@ -330,3 +330,29 @@ cartTotal *= (1 + vatTax);
 
 // logging the the total cart amount with tax included
 console.log(`The cart total for your items is: R ${cartTotal.toFixed(2)}`);
+
+// #3 Realistic example: Red's shopping cart has three items costing R150, R300, and R460. The store applies 5 % discount
+// on a cart total over R500. Calculate a total of Red's cart and a checkout total.
+// storing price value R150 to a variable name item1
+let item1 = 150;
+// storing price value R300 to a variable name item2
+let item2 = 300;
+// storing price value R460 to a variable name item3
+let item3 = 460;
+// storing discount rate 5% to a variable named discountFiveRate
+let discountFiveRate = 0.05;
+// adding items' total and storing the value to a variable called totalCart
+let totalCart = item1 + item2 + item3;
+// declared checkoutTotal and assigned it to cartTotal
+let checkoutTotal = totalCart;
+
+// comparing the totalCart amount if it meets the discount
+if (totalCart > 500) {
+  // recalculating the checkoutTotal should the discount merit be met
+  checkoutTotal = totalCart - (1 - discountFiveRate);
+}
+
+// logging the results
+console.log(`The total cart is: R ${totalCart.toFixed(2)}\nCheckout total: R ${checkoutTotal.toFixed(2)}`)
+
+
