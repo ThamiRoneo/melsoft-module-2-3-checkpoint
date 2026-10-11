@@ -645,3 +645,36 @@ console.log("5" - 3 + 2);   // 4
 
 // Interview answer: Parentheses can be added to an expression even when they are not needed to change the order of operations.
 // Again, to aid with readability.
+
+
+/******************************************************
+*  Challenge 6 - Ternary and Short-Circuit Patterns   *
+******************************************************/
+
+// Part A - Ternary chain for grade conversion
+// declaring percentages variables
+percentage = 95;
+// percentage = 82;
+// percentage = 73;
+// percentage = 65;
+// percentage = 54;
+// percentage = 42;
+// percentage = 0;
+// percentage = 100;
+
+grade = percentage >= 90 ? 'A' :
+  percentage >= 80 && percentage < 90 ? 'B' :
+    percentage >= 70 && percentage < 80 ? 'C' :
+      percentage >= 60 && percentage < 70 ? 'D' :
+        percentage >= 50 && percentage < 60 ? 'E' : 'F';
+
+// Testing
+console.log(grade);
+// 95 - 'A'
+// 82 - "B"
+// 73 - 'C'
+// 65 - 'D'
+// 54 - 'E'
+// 42 - 'F'
+// 0 - 'F'
+// 100 - 'A'
