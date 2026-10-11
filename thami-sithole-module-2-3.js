@@ -684,9 +684,9 @@ console.log(grade);
 let userProfile = {
   displayName: "",
   theme: "",
-  maxResults: 0,
+  maxResults: null,
   lastLogin: null,
-  notificationCount: undefined
+  notificationCount: 0
 
 };
 
@@ -696,6 +696,8 @@ let maxResults = userProfile.maxResults || 10;
 let lastLogin = userProfile.lastLogin ?? 'Never';
 let notificationCount = userProfile.notificationCount ?? 0;
 
+console.log(userProfile);
 // Nullish operator behaves differently because unlike OR operator if there are many operands,
 // it returns one that is not nullish. whereas, with the OR operator, it looks from left to right and returns
 // the right value if the left is null or undefined.
+
