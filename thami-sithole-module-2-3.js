@@ -916,3 +916,36 @@ if (user1 & 1 && user1 & 2) {
 if (user1 & 1 & user1 & 2) {
   console.log("Has both"); // Silent failure!
 }
+
+
+/************************************************************
+*   Challenge 9 - Real-World Payroll + Banking Calculator   *
+************************************************************/
+
+// Scenario 1 - Payroll processor
+
+let grossSalary = 45000;
+let paye = 0.25;
+let uif = 0.01;
+const MEDICAL = 2500;
+let pension = 0.075;
+let totalDeduction = 0;
+let netSalary = 0;
+
+paye *= grossSalary;
+uif *= grossSalary;
+pension *= grossSalary;
+totalDeduction += MEDICAL + uif + paye + pension;
+netSalary = grossSalary - totalDeduction;
+
+
+console.log(`PAYE: R ${paye}`);
+console.log(`UIF: R ${uif}`);
+console.log(`Medical aid: R ${MEDICAL}`)
+console.log(`PENSION: R ${pension}`);
+console.log(`Total Deductions: R ${totalDeduction}`);
+console.log(`Net Salary: R ${netSalary}`);
+
+// Simulation
+let grossSalaryInput = Number('45000');
+Number.isNaN(grossSalaryInput)
