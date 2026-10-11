@@ -949,3 +949,40 @@ console.log(`Net Salary: R ${netSalary}`);
 // Simulation
 let grossSalaryInput = Number('45000');
 Number.isNaN(grossSalaryInput)
+
+
+// Scenario 2 - Compound interest savings
+
+let initialDeposit = 25000;
+let annualInterest = 0.075;
+let compoundedMonthly = 12;
+let time = 3;
+let totalBalance, totalInterestEarned, effectiveAnnualRate;
+
+totalBalance = initialDeposit * (1 + annualInterest / compoundedMonthly) ** (compoundedMonthly * time);
+
+totalInterestEarned = totalBalance - initialDeposit;
+
+effectiveAnnualRate = ((1 + annualInterest / compoundedMonthly) ** compoundedMonthly) - 1;
+
+console.log(`Total balance after 3 years: R ${totalBalance.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+console.log(`Total interest earned: R ${totalInterestEarned.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
+console.log(`Annual interest rate: ${effectiveAnnualRate.toFixed(2)}%`);
+
+// Test balances
+let balance = 500;
+//let balance = 1500;
+//let balance = 10000;
+//let balance = 50000;
+
+
+// calculating annual fee on balance
+let annualFee = balance * 12;
+
+const bankCharges = balance >= 0 && balance < 1000 ? 'R 25' :
+  balance >= 1000 && balance < 5000 ? 'R 50' :
+    balance >= 5000 && balance < 25000 ? 'R 75' :
+      'R 0 (fees waived)';
+
+console.log(`Monthly bank charge fee for this month: ${bankCharges}`);
+console.log(`Annual fee on the balance: R ${annualFee.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`);
