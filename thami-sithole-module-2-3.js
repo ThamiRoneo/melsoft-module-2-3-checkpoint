@@ -413,3 +413,12 @@ console.log(result1);
 
 // concationation with template literal
 console.log(`Hey ${playerName}, you have the best high score ${highScore}XP`);
+
+/*
+
+1. let x = 4
+Prefix (++x): console.log(++x) // 5 (increments first, then returns 5)
+Postfix (x++): console.log(x++) // 5 (returns 4 first, then increments to 5)
+
+2. 
+*/
