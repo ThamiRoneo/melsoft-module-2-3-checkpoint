@@ -422,3 +422,86 @@ Postfix (x++): console.log(x++) // 5 (returns 4 first, then increments to 5)
 
 2. 
 */
+
+/******************************************************
+*       Challenge 4 - The Equality Deep Dive          *
+******************************************************/
+
+// Part A - Predict and verify
+
+// #1: 0 == false     prediction: true
+// one-liner: In boolean 0 is equal to false and 1 equals true, hence 0 == false(0) is true.
+console.log(0 == false);   // true
+
+// #2: 0 === false     prediction: false
+// one-liner: strict equality checks not only the values but data types as well and number (0) is not the same as boolean (false).
+console.log(0 === false);   // false
+
+// #3: "" == 0     prediction: true
+// one-liner: an empty string is regarded as a zeroed value and in eqality therefore, it is true.
+console.log("" == 0);   // true
+
+// #4: "" === 0     prediction: false
+// one-liner: here we are evaluating a string and a number using strict equality which happens to check not only the values being compared
+// but their data type and the two types for these values aren't the same.
+console.log(0 === false);   // false
+
+// #5: "0" == 0     prediction: true
+// one-liner: a string zero is equal to number 0
+console.log("0" == 0);   // true
+
+// #6: "0" === 0     prediction: false
+// one-liner: it is false because a string can never be equal to a number in strict equality.
+console.log("0" === 0);   // false
+
+// #7: null == undefined     prediction: true
+// one-liner: it is true because null and undefined are considered as zeroed values hence true.
+console.log(null == undefined);   // true
+
+// #8: null === undefined     prediction: false
+// one-liner: it is false because null is type object and undefined is type undefined hence under strict equality it is false.
+console.log(null === undefined);   // false
+
+// #9: null == 0     prediction: false
+// one-liner: null is of type object and cannot be equal to 0, hence false.
+console.log(null == 0);   // false
+
+// #10: null >= 0     prediction: true
+// one-liner: it is true because null is equal to 0 as they are both zeroed values. since the evaluation was based on the OR operator
+// meaning one condition passes - the equal condition is the one that passes in this case.
+console.log(null >= 0);   // true
+
+// #11: null > 0     prediction: false
+// one-liner: null is not greater than 0 as they're regarded equal, hence false.
+console.log(null > 0);   // false
+
+// #12: NaN == NaN    prediction: false
+// one-liner: it false because we cannot tell if both the 'not a number' being evaluated could be of the same exact characters.
+console.log(NaN == NaN); // false
+
+// #13: NaN === NaN    prediction: false
+// one-liner:
+console.log(NaN === NaN); // false
+
+// #14: Object.is(NaN, NaN)   prediction: true
+console.log(Object.is(NaN, NaN)); // true
+
+// #15: +0 === -0       // prediction: true
+// one-liner: it is true because whether a zero is negative or positive make no difference it is still a zero, hence true.
+console.log(+0 === -0); // true
+
+// #16: Object.is(+0, -0)     // prediction: false
+// one-liner: zeros aren't objects
+console.log(Object.is(+0, -0)); // false
+
+// #17: [1,2,3] == "1,2,3"   // prediction: true
+console.log([1, 2, 3] == "1,2,3"); // true
+
+// #18: [] == false   prediction: true
+console.log([] == false);  // true
+
+// #19: [] == 0     // prediction: true
+console.log([] == 0); // true
+
+// #20: [0] == false  prediction: true
+console.log([0] == false);  // true
