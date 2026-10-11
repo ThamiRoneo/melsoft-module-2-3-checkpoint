@@ -294,3 +294,25 @@ console.log(typeof '12');  // string
 // as an integer 12 instead of 0.12, meaning the final calculation will be wrong and that would cost money.
 
 // #3: Number('') return 0, it is common because an empty string is regarded as 0.
+
+/******************************************************
+*       Challenge 3 - Operators Masterclass           *
+******************************************************/
+
+// #1 Realistic example: Calculate how much time did two Junior developers spent working on a project for the period of 3 months.
+// Developer A and Developer B spent 2041 and 1406 minutes respectively.
+// declared and assigned each developer variable with their time in munites
+const devAMinutes = 2041;
+const devBMinutes = 1406;
+// calculating the developer's time combine
+const combinedMinutes = devAMinutes + devBMinutes;
+// calculating hours variable of the time
+const hours = Math.trunc(combinedMinutes / 60);
+// calculating minutes variable of the time
+const minutes = combinedMinutes % 60;
+
+// logging the time spend workiing on a project in hours and  minutes
+console.log(`The developers' time combined for 3 months: ${hours} hours ${minutes} minutes`);
+
+
+
