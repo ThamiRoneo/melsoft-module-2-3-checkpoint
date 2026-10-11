@@ -43,3 +43,14 @@ const known = undefined;
 // #10:the variable is of primitive data type - string. I declared the variable using the keyword 'const' to prevent accidental reassignment in this scope.
 const greeting = `Hello! my full name is ${fullName}, and I am ${myAge} years old.`;
 
+// Part B
+
+typeof fullName       // prediction: 'string'
+typeof myAge          // prediction: 'number'
+typeof isEnjoyingJavascript // prediction: ''boolean'
+typeof number         // prediction: 'number'
+typeof valueInfinity  // prediction: 'number'
+typeof number1        // prediction: 'number'
+typeof n              // prediction: 'object'
+typeof known          // prediction: 'undefined'
+typeof greeting       // prediction: 'string'
