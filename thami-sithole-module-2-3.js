@@ -719,3 +719,36 @@ const address = user?.address ?? 'Unknown city';
 console.log(userCity);
 console.log(city);
 console.log(address);
+
+// Part D - Predict the output
+
+null || undefined || 0 || "" || "finally"     // 'finally'
+console.log(null || undefined || 0 || "" || "finally");
+
+null ?? undefined ?? 0 ?? "" ?? "finally"     //  0
+console.log(null ?? undefined ?? 0 ?? "" ?? "finally" );
+
+0 || "first truthy"                           // 'first truthy'
+console.log(0 || "first truthy"  );
+
+0 ?? "first non-nullish"                      //  0
+console.log(0 ?? "first non-nullish");
+
+true && false && "never reached"              //  false
+console.log(true && false && "never reached" );
+
+"first" && "second" && "third"                //  'third'
+console.log("first" && "second" && "third" );
+
+false || (true && "yes")                      //  'yes'
+console.log(false || (true && "yes"));
+
+(false || true) && "yes"                      // 'yes
+console.log((false || true) && "yes" );
+
+1 && 2 && 3                                   //  3
+console.log(1 && 2 && 3 );
+
+null?.foo?.bar?.baz                           //  undefined
+console.log(null?.foo?.bar?.baz);
+
