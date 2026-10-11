@@ -54,3 +54,13 @@ typeof number1        // prediction: 'number'
 typeof n              // prediction: 'object'
 typeof known          // prediction: 'undefined'
 typeof greeting       // prediction: 'string'
+
+/*
+Comment answer: typeof null returns 'object' because of the historical bug in Javascript's original implementation from 1995. Early Javascript
+engines stored values as 32-bit chunk where lower bits indicated the type tag - the tag for objects was 000 (binary),
+and null was all zeros (null pointer). Then, null inherited the 0 type tag, causing typeof to incorrectly identify it as an object.
+
+typeof NaN return 'number' because NaN is a special value defined by the IEEE 754 floating-point standard,
+not a distinct data type. NaN is a valid bit pattern within that numeric format, the internal type check classifies it as Number, 
+making typeof NaN return 'number'.
+*/
