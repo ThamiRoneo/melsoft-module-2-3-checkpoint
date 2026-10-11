@@ -385,3 +385,16 @@ if (!(inputNumber > 2000)) {
 } else {
   console.log('Gen Z') //logging the alternative result should the condition fail
 }
+
+// #6 Realistic example: Display a player's skills level badge: 'Super Pro level' if a playerSkill is 'super pro' else 'Pro level' if 'pro',
+// else 'Noob'.
+// assigning a variable with a string pro for plaer's skill
+skillsLevelBadge = 'pro';
+
+// constant playSkill evaluates the value assigned to skillsLevelBadge to match it with the appropriate player skill
+const playerSkill = skillsLevelBadge == 'super pro' ? 'Super Pro level' :
+  skillsLevelBadge == 'pro' ? 'Pro level' : 'Noob';
+
+// looging the result of the player skill
+console.log(playerSkill);
+
