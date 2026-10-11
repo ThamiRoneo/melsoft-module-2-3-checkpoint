@@ -788,3 +788,35 @@ new Date() instanceof Date;                // true
 // a ReferenceError. instaceof is the right tool when checking for custom class instances,and typeof is wrong,
 // because it always returns 'object' for any custom object, while instaceof correctly identifies if an
 // object was created by a specific constructor.
+
+// Part C - delete and its gotchas
+
+// 1.
+user = { name: 'Lerato', age: 25, role: 'student' }
+delete user.role;
+console.log(user)      //  before: { name: 'Lerato', age: 25, role: 'student' } after: { name: 'Lerato', age: 25 }
+
+// 2.
+let x = 5;
+delete x;
+console.log(x);
+// the log returns 5, why - because delete operator cannot delete a variables, it removes properties from an
+// object.
+
+// 3.
+const arr = [1, 2, 3, 4];
+delete arr[1];
+console.log(arr);           // [ 1, <1 empty item>, 3, 4 ]
+console.log(arr.length);    // 4
+console.log(arr[1]);        // 'undefined'
+// comment: delete is dangerous on arrays because it deletes the value but never the index position itself.
+
+// 4.
+delete Math.PI;
+console.log(Math.PI);   // 3.141592653589793
+// comment: first of all is not an object and it is a read-only constant, hence it can never be deleted.
+
+// Interview answer: I would not use delete because delete only removes the value by key and leaves an empty slot,
+// instead i could use splice() - it removes the specified element on an array and automatically shifts all the
+// the following elements to the left. for example: arr.splice(index, 1) - would remove element on index 1 and shift
+// all elements following the removed index to close the empty slot.
