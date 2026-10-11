@@ -64,3 +64,137 @@ typeof NaN return 'number' because NaN is a special value defined by the IEEE 75
 not a distinct data type. NaN is a valid bit pattern within that numeric format, the internal type check classifies it as Number, 
 making typeof NaN return 'number'.
 */
+
+/******************************************************
+*       Challenge 2 - Type Conversion Workshop        *
+******************************************************/
+
+// Part A - Explicit conversion
+
+// #1
+console.log(Number('123'));                  // results: 123
+console.log(typeof Number('123'));           // number
+
+console.log(parseInt('123'));                // results: 123
+console.log(typeof parseInt('123'));         // number
+
+console.log(parseFloat('123'));              // rsults: 123  
+console.log(typeof parseFloat('123'));       // undefined
+
+console.log(Boolean('123'));                 // results: 123
+console.log(typeof Boolean('123'));          // boolean
+
+console.log(String('123'));                 // results: 123
+console.log(typeof String('123'));          // string
+
+// #2
+console.log(Number('3.14'));                  // results: 3.14
+console.log(typeof Number('3.14'));           // number
+
+console.log(parseInt('3.14'));              // results: 3
+console.log(typeof parseInt('3.14'));       // number
+
+console.log(parseFloat('3.14'));         // results: 3.14 
+console.log(typeof parseFloat('3.14'));     // number
+
+console.log(Boolean('3.14'));               // results: true
+console.log(typeof Boolean('3.14'));        // boolean
+
+console.log(String('3.14'));              // results: '3.14'
+console.log(typeof String('3.14'));       // string
+
+// #3
+console.log(Number("hello"));             // results: NaN
+console.log(typeof Number("hello"));      // number`
+
+console.log(parseInt("hello"));           // results: NaN
+console.log(typeof parseInt("hello"));    // number
+
+console.log(parseFloat("hello"));         // results: Nan
+console.log(typeof parseFloat("hello"));  // number
+
+console.log(Boolean("hello"));            // results: true
+console.log(typeof Boolean("hello"));     // boolean
+
+console.log(String("hello"));             // results: hello
+console.log(typeof String("hello"));      // string
+
+// #4
+console.log(Number("42abc"));             // results: NaN
+console.log(typeof Number("42abc"));      // number
+
+console.log(parseInt("42abc"));           // results: 42
+console.log(typeof parseInt("42abc"));    // number
+
+console.log(parseFloat("42abc"));         // results: 42
+console.log(typeof parseFloat("42abc"));  // number
+
+console.log(Boolean("42abc"));            // results: true
+console.log(typeof Boolean("42abc"));     // boolean
+
+console.log(String("42abc"));             // results: 42abc
+console.log(typeof String("42abc"));      // string
+
+// #5
+console.log(Number(""));              // results: 0
+console.log(typeof Number(""));       // number
+
+console.log(parseInt(""));            // results: NaN`
+console.log(typeof parseInt(""));     // number
+
+console.log(parseFloat(""));          // results: NaN
+console.log(typeof parseFloat(""));   // number
+
+console.log(Boolean(""));             // results: false
+console.log(typeof Boolean(""));      // boolean
+
+console.log(String(""));              // results: (empty string)
+console.log(typeof String(""));       // string
+
+// #6
+console.log(Number(0));               // results: 0
+console.log(typeof Number(0));        // number
+
+console.log(parseInt(0));             // results: 0
+console.log(typeof parseInt(0));      // number
+
+console.log(parseFloat(0));           // results: 0
+console.log(typeof parseFloat(0));    // number
+
+console.log(Boolean(0));              // results: false
+console.log(typeof Boolean(0));       // boolean
+
+console.log(String(0));               // results: 0
+console.log(typeof String(0));        // string
+
+// #7
+console.log(Number(null));              // results: 0
+console.log(typeof Number(null));       // number
+
+console.log(parseInt(null));            // results: NaN
+console.log(typeof parseInt(null));     // number
+
+console.log(parseFloat(null));          // results: NaN
+console.log(typeof parseFloat(null));   // number
+
+console.log(Boolean(null));             // results: false
+console.log(typeof Boolean(null));      // boolean
+
+console.log(String(null));              // results: null
+console.log(typeof String(null));       // string
+
+// #8
+console.log(Number(undefined));             // results: NaN
+console.log(typeof Number(undefined));      // number
+
+console.log(parseInt(undefined));           // results: NaN
+console.log(typeof parseInt(undefined));    // number
+
+console.log(parseFloat(undefined));         // results: NaN
+console.log(typeof parseFloat(undefined));  // number
+
+console.log(Boolean(undefined));            // results: false
+console.log(typeof Boolean(undefined));     // boolean
+
+console.log(String(undefined));             // results: undefined
+console.log(typeof String(undefined));      // string
