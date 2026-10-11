@@ -198,3 +198,87 @@ console.log(typeof Boolean(undefined));     // boolean
 
 console.log(String(undefined));             // results: undefined
 console.log(typeof String(undefined));      // string
+
+// Part B - Implicit coercion
+
+// #1
+// output prediction: '53'
+// resulting type: string
+// explanation sentence: both operands were treated as string and were concatenated.
+console.log("5" + 3);       // '53'
+console.log(typeof "53");   // string
+
+// #2
+// output prediction: 2
+// resulting type: number
+// explanation sentence: operand "5" was converted to a number then applied subtraction (5 - 3).
+console.log("5" - 3);     // 2
+console.log(typeof 2);   // number
+
+// #3
+// output prediction: 10
+// resulting type: number
+// explanation sentence: both operands were converted to number, then applied multiplication (5 * 3).
+console.log("5" * "2");    // 10
+console.log(typeof 10);   // number
+
+// #4
+// output prediction: 2
+// resulting type: number
+// explaantion sentence: operands were treated as number - converting true to 1 then applied addition.
+console.log(true + 1);    // 2
+console.log(typeof 2);   // number
+
+// #5
+// output prediction: 'true1'
+// resulting type: string
+// explanation sentence: true was converted to string, then concatenated the strings to get 'true1'.
+console.log(true + "1");    // true1
+console.log(typeof 'true1');   // string
+
+// #6
+// output prediction: 0
+// resulting type: number
+// explanation sentence: both operands were treated as number, changing false to 0 and null to 0 then applied addition (0 + 0).
+console.log(false + null);    // 0
+console.log(typeof 0);   // number
+
+// #7
+// output prediction: NaN
+// resulting type: number
+// explanation sentence: null was coerced to 0 and undefined to NaN then applied the addition which results to NaN.
+console.log(null + undefined);    // NaN
+console.log(typeof NaN);   // number
+
+// #8
+// output prediction: 0.125
+// resulting type: number
+// explanation sentence: JavaScript applied division operator to 1 / 8 and return 0.125.
+console.log(1 / 8);    // 0.125
+console.log(typeof 0.125);   // number
+
+// #9
+// output prediction: NaN
+// resulting type: zeros were coerced to boolean type - false hence they return NaN (false / false)
+console.log(0 / 0);    // NaN
+console.log(typeof NaN);   // number
+
+// #10
+// output prediction: NaN
+// resulting type: operand 1 was coerced to a string then subtraction was applied to the operands ("abc" - "1")
+console.log("abc" - 1);    // NaN
+console.log(typeof NaN);   // number
+
+// #11
+// output prediction: ''
+// resulting type: string
+// explanation sentence: both operands were coerced to an empty string (''), then applied addition ('' + '') which equals ''.
+console.log([] + []);    // ''
+console.log(typeof '');  // string
+
+// #12
+// output prediction: '12'
+// resulting type: string
+// explanation sentence: both operands were converted to a string ("1" + "2") then concatenated to return '12'.
+console.log([1] + [2]);    // '12'
+console.log(typeof '12');  // string
