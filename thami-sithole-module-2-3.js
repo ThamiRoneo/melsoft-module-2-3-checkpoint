@@ -505,3 +505,41 @@ console.log([] == 0); // true
 
 // #20: [0] == false  prediction: true
 console.log([0] == false);  // true
+
+// Part B - Real-world form validator
+const form = document.querySelector('form');
+const currentEmail = document.querySelector('#current-email');
+const confirmEmail = document.querySelector('#confirm-email');
+const newPassword = document.querySelector('#new-password');
+const confirmPassword = document.querySelector('#confirm-password');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  if (newPassword.value !== confirmPassword.value) {
+    alert('Passwords do not match');
+    return;
+  }
+  
+  if (currentEmail.value !== confirmEmail.value) {
+    alert('Email addresses do not match');
+    return;
+  }
+
+  if (newPassword.value === currentEmail.value) {
+    alert('New password cannot be the same as the current email');
+    return;
+  }
+
+  if(newPassword.value.length < 8) {
+    alert('Password must be at least 8 characters');
+    return;
+  }
+
+  alert('Form submitted successfully');
+});
+
+
+// I used the strict equality (===) to compare the values of the password fields.
+// Yes, my choice matters a lot specifically for the password comparison, because
+// it ensures that the values are compared as strings, not as numbers or any other type.
