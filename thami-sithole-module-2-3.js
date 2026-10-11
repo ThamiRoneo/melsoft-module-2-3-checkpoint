@@ -752,3 +752,22 @@ console.log(1 && 2 && 3 );
 null?.foo?.bar?.baz                           //  undefined
 console.log(null?.foo?.bar?.baz);
 
+
+/******************************************************
+*       Challenge 7 - typeof, instaceofn delete       *
+******************************************************/
+
+// Part A - typeof masteery
+
+typeof 42;                           // 'number'
+typeof "hello";                      // 'string'
+typeof true;                         // 'boolean'
+typeof undefined;                    // 'undefined
+typeof null(THE, famous, bug);         // SyntaxError
+typeof {};                           // 'object'
+typeof [](another, trap);             // SyntaxError
+typeof function () {};              // 'function'
+typeof NaN;                          // 'number'
+typeof undeclaredVariable;           //  'undefined'
+
+// one-liner: An array is an reference type 'object', same as other reference types.
