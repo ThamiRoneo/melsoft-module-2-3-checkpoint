@@ -282,3 +282,15 @@ console.log(typeof '');  // string
 // explanation sentence: both operands were converted to a string ("1" + "2") then concatenated to return '12'.
 console.log([1] + [2]);    // '12'
 console.log(typeof '12');  // string
+
+// Part C - The three questions
+
+// #1: Number('42abc') return value is NaN (not a number), and parseInt('42abc') return 42. The difference is the conversion,
+// one is converting the string '42abc' to a number, and the other is converting the very same string to an integer 42.
+
+// #2: I would reach for parseFloat instead of parseInt in real code when I want to convert an integer variable into a float type
+// for money conversion. 
+// Scenario: For calculating total interest paid to a client, in the calculation for interest, the interest rate value was used
+// as an integer 12 instead of 0.12, meaning the final calculation will be wrong and that would cost money.
+
+// #3: Number('') return 0, it is common because an empty string is regarded as 0.
