@@ -820,3 +820,99 @@ console.log(Math.PI);   // 3.141592653589793
 // instead i could use splice() - it removes the specified element on an array and automatically shifts all the
 // the following elements to the left. for example: arr.splice(index, 1) - would remove element on index 1 and shift
 // all elements following the removed index to close the empty slot.
+
+
+/******************************************************
+*       Challenge 8 - Bitwise Permission System       *
+******************************************************/
+
+const READ = 1;     // binary 0001
+const WRITE = 2;    // binary 0010
+const DELETE = 4;   // binary 0100
+const ADMIN = 8;    // binary 1000
+
+// #1
+// binaray steps - to store permission as a single number using OR operator
+// means that either one of the bits has to be 1 for the single nuumber to be 1.
+//  (1): 0001
+//  (2): 0010
+//  (3): 0011
+let user1 = READ | WRITE;
+console.log(user1);    // (3) binary 0011
+
+// #2
+// binary         0001
+// binary         0010
+// binary         0100
+// binary         1000
+// single number: 1111  (15)
+const admin = READ | WRITE | DELETE | ADMIN;
+console.log(admin);   // (15)  binary 1111
+
+// #3
+let checkRead = user1 & 1 ? 'Yes' : 'No';
+console.log(checkRead);       // 'Yes'
+
+// #4
+let checkDelete = user1 & 4 ? 'Yes' : 'No';
+console.log(checkDelete);     // 'No'
+
+//  #5
+user1 |= DELETE;
+// WRITE binary : 0001
+// READ binary  : 0010
+// DELETE binary: 0100
+// single number: 0111   (7)
+console.log(user1);    // (7) binary 0111
+
+// #6
+user1 &~ WRITE;
+// READ binary  : 0001
+// DELETE binary: 0100
+// single number: 0101   (7)
+console.log(user1);   // (7) binary 0101
+
+// #7
+user1 = READ | DELETE;
+toggleAdminOn = user1 ^ ADMIN;
+toggleAdminOff = user1 ^ ADMIN ^ ADMIN;
+// READ binary  : 0001
+// DELETE binary: 0100
+// ADMIN binary : 1000    [toggle on]
+// single number: 1101   (13)
+console.log(toggleAdminOn);   // 13 binary 1101
+// READ binary  : 0001
+// DELETE binary: 0100
+// ADMIN binary : 0000    [toggle off]
+// single number: 0101    (5)
+console.log(toggleAdminOff);  // 5 binary 0101
+
+// #8
+const SUPER_ADMIN = ADMIN << 1;
+console.log(SUPER_ADMIN);    // 16 binary 10000
+
+// Interview answers:
+// #1: A team would opt to use bitwise flags for permissions instead of storing an array for the following reasons:
+// - Performance efficiency: bitwise and checks operate on a single CPU instruction, which enables the program to run faster.
+// - Memory and network efficiency: since permissions are stored as single integer they reduce payload size, saving memory.
+
+// #2: The real-world downside of using bitwise permissions is that they are hard to debug, adding new permissions require careful bit
+// management to avoid conflicts and a 64-bit integer restricts to unique permission.
+// I would not use this pattern when I have less than 30 permissions (fewer).
+
+// #3: The difference lies on evaluation behaviour and operand types.
+// The double (&&, ||) operators are logical operators (evaluate operands as Booleans) and they support short-circuiting, meaning they stop evaluating as
+// soon as the results are determined.
+// The single (&, |) operators are bitwise operators that always evaluate both operands.
+// Silent bug case using this challenge's scenario:
+ user1 = 3; // Binary: 11 (has both read and write)
+
+// Correct logical check
+if (user1 & 1 && user1 & 2) {
+  console.log("Has both"); // Works correctly
+}
+
+// Incorrect use of bitwise & in place of &&
+if (user1 & 1 & user1 & 2) {
+  console.log("Has both"); // Silent failure!
+}
