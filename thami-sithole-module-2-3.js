@@ -1053,5 +1053,46 @@ console.log("Total: R" + finalTotal.toFixed(2));
 *****************************************************/
 
 /*
-1. 
+1. Is that type systems are a very crucial fundamental to JavaScript that a JavaScript developer has to know. How JavaScript's type systems
+   determines types at runtime or how it converts values between types to prevent errors. Variables are not bound to a specific type.
+
+2. Strict equality operator is much safer because it evaluates operands not just by values but as well as their data types, where as loose equality operator
+   when data types do not match it converts one operand to match the other blindly. Take the example we had of ("5" + 3): what it did it converted 3 to string
+   then concatenated returning '53'.
+
+3. Nullish coalescing I would prefer it when differentiating between explicitly null or undefined, and valid falsy values.
+Example:
+const adminLimit = 10;
+const userLimit = 0;
+
+// 0 is not null/undefined, so it is preserved
+finalLimit = userLimit ?? adminLimit;       //Correct behaviour
+
+console.log(finalLimit); // Output: 0
+
+// 0 is falsy - the operator incorrectly swaps it for the default
+finalLimit = userLimit || adminLimit;           // Incorrect behaviour
+
+console.log(finalLimit); // Output: 10
+
+4. typeof null returns 'object' because of the historical bug in Javascript's original implementation from 1995. Early Javascript
+   engines stored values as 32-bit chunk where lower bits indicated the type tag - the tag for objects was 000 (binary),
+   and null was all zeros (null pointer). Because the typeof operator lacked specific logic to distinguish null from objects,
+   it incorrectly identified the zeroed type tag as an object. The behavior was preserved due to backward compatibility, as fixing it
+   would break huge amount of existing web code.
+   I would use strict equality rather than typeof to check if whether a variable is null without being tricked by the bug.
+
+5. If a developer fails to cast a 32-bit or 64-bit integer to a wider type when performing arithmetic on elapsed time, the value 
+   will silently wrap around to zero or a negative number after the counter exceeds its maximum limit, and that could take a great
+   deal of time to notice the bug.
+
+6. 0.1 and 0.2 are not represented accurately in binary and when added together they are slightly above 0.3, hence 0.1 + 0.2 is not equal 0.3.
+   To handle such precision issues i think banks use rounding to a fixed decimal precision or use a small tolerance (Epsilon).
+
+7. Single-characters operators are bitwise operators, meaning they treat operands as a sequence of zeros and ones and the always check both operands.
+   Double-character operators are logical operators, meaning they are treated as booleans, and they stop evaluating as soon as the results are determined.
+
+8. I had my fair share of struggle with typeof, instanceof - what helped was your advise for me to open Node REPL and type in the typeof or instanceof
+   directly to check. and now since last week Wednesday it is normal for me to open my IDE and have a terminal window next to it to verify for myself.
+   Thanks to you, I highly appreciate it.
 */
