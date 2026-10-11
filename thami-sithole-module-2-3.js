@@ -543,3 +543,105 @@ form.addEventListener('submit', (e) => {
 // I used the strict equality (===) to compare the values of the password fields.
 // Yes, my choice matters a lot specifically for the password comparison, because
 // it ensures that the values are compared as strings, not as numbers or any other type.
+
+/******************************************************
+*       Challenge 5 - Operators Precedence            *
+******************************************************/
+
+// #1 prediction: 
+// step 1: 2 + (3 * 4) - 1
+// step 2: (2 + 12) - 1
+// step 3: 14 - 1  
+// step 4: 13
+console.log(2 + 3 * 4 - 1);  // 13
+
+// #2 prediction: 
+// step 1: 5 * 3
+// step 2: 15
+console.log((2 + 3) * (4 - 1));  // 15
+
+// #3 prediction:
+// step 1: (10 - 4) - 2
+// step 2: 6 - 2
+// step 3: 4
+console.log(10 - 4 - 2);   // 4
+
+// #4 prediction:
+// step 1: 2 ** (3 ** 2)
+// step 2: 2 ** 9
+// step 3: 512
+console.log(2 ** 3 ** 2);   //512
+
+// #5 prediction:
+// step 1: (10 % 3) * 2 + 1
+// step 2: (1 * 2) + 1
+// step 3: 2 + 1
+// step 4: 3
+console.log(10 % 3 * 2 + 1);   // 3
+
+// #6 prediction:
+// step 1: (100 / 4) / 5
+// step 2: (25 / 5)
+// step 3: 5
+console.log(100 / 4 / 5);   // 5
+
+// #7 prediction:
+// step 1: (5 + 2) > 6 && 3 < 4
+// step 2: (7 > 6) && (3 < 4)
+// step 3: true && true
+// step 4: true
+console.log(5 + 2 > 6 && 3 < 4); // true
+
+// #8 prediction:
+// step 1: (true && false) || (true && true)
+// step 2: false || true
+// step 3: true
+console.log(true && false || true && true);  // true
+
+// #9 prediction:
+// step 1: (!false) && (!!0)
+// step 2: true && (0)
+// step 3: true && false
+// step 4: false
+console.log(!false && !!0);
+
+// #10 prediction:
+// step 1: 5 > 3 && 10 < 20 || !(2 === "2")
+// step 2: (5 > 3) && (10 < 20) || !(false)
+// step 3: (true && true) || true
+// step 4: true || true
+// step 5: true
+console.log(5 > 3 && 10 < 20 || !(2 === "2"));  // true
+
+// #11 prediction:
+// step 1: (1000 * 1.15) * 0.9
+// step 2: (1150 * 0.9)
+// step 3: 1035
+console.log(1000 * 1.15 * 0.9);   // 1035
+
+// #12 prediction:
+// step 1: typeof (5 + 1)
+// step 2: typeof 6
+// step 3: number
+console.log(typeof (5 + 1))  // number
+
+// #13 prediction:
+// step 1: typeof (5 + 1)
+// step 2: typeof 6
+// step 3: number
+console.log(typeof (5 + 1)); // number
+
+// #14 prediction:
+// step 1: "5" + (3 * 2)
+// step 2: "5" + 6
+// step 3: "56"
+console.log("5" + 3 * 2);   // "56"
+
+// #15 prediction:
+// step 1: ("5" - 3) + 2
+// step 2: 2 + 2
+// step 3: 4
+console.log("5" - 3 + 2);   // 4
+
+// Interview answer: Parentheses can be added to an expression even when they are not needed to change the order of operations.
+// Again, to aid with readability.
