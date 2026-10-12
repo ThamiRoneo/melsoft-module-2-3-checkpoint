@@ -478,14 +478,15 @@ console.log(null >= 0);   // true
 console.log(null > 0);   // false
 
 // #12: NaN == NaN    prediction: false
-// one-liner: it false because we cannot tell if both the 'not a number' being evaluated could be of the same exact characters.
+// one-liner: it false because we cannot tell if both the 'not a number' as the same. the operand is not even equals to itself.
 console.log(NaN == NaN); // false
 
 // #13: NaN === NaN    prediction: false
-// one-liner:
+// one-liner: strict equality applied, we know that NaN is not even equals to itself therefore, false
 console.log(NaN === NaN); // false
 
 // #14: Object.is(NaN, NaN)   prediction: true
+// one-liner: it is true because Object.is check if values are the same.
 console.log(Object.is(NaN, NaN)); // true
 
 // #15: +0 === -0       // prediction: true
@@ -493,19 +494,25 @@ console.log(Object.is(NaN, NaN)); // true
 console.log(+0 === -0); // true
 
 // #16: Object.is(+0, -0)     // prediction: false
-// one-liner: zeros aren't objects
+// one-liner: no coercion was applied here and both values got evaluated with their signs + & -, therefore false.
 console.log(Object.is(+0, -0)); // false
 
 // #17: [1,2,3] == "1,2,3"   // prediction: true
+// one-liner: it is true because of the operands are evaluated using a loose equal operator, therefore their data type
+// is not checked instead coercion is applied.
 console.log([1, 2, 3] == "1,2,3"); // true
 
 // #18: [] == false   prediction: true
+// on-line: an empty array is a zero type tag therefore, coercion is applied to both value then 0 == 0 and true due to their
+// loose equality operator
 console.log([] == false);  // true
 
 // #19: [] == 0     // prediction: true
+// one-liner: coercion is applied to [] since it is a zero type tag
 console.log([] == 0); // true
 
 // #20: [0] == false  prediction: true
+// one-liner: coercion is applied to [0] then both operands are evaluated as 0 == 0, which is true.
 console.log([0] == false);  // true
 
 // Part B - Real-world form validator
@@ -645,7 +652,7 @@ console.log("5" + 3 * 2);   // "56"
 // step 3: 4
 console.log("5" - 3 + 2);   // 4
 
-// Interview answer: Parentheses can be added to an expression even when they are not needed to change the order of operations.
+// Interview answer: Parentheses can be added to an expression even when they are not needed for clarity and to prevent future errors.
 // Again, to aid with readability.
 
 
