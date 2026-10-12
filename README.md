@@ -1,4 +1,4 @@
-# melsoft-module-3-checkpoint
+# melsoft-module-2-3-checkpoint
 ### Name: Thami Sithole
 ### Email: Thamironeo.sithole@gmail.com
 ---
