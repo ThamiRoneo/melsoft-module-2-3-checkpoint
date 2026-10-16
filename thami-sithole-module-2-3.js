@@ -662,7 +662,7 @@ console.log("5" - 3 + 2);   // 4
 
 // Part A - Ternary chain for grade conversion
 // declaring percentages variables
-percentage = 95;
+let percentage = 95;
 // percentage = 82;
 // percentage = 73;
 // percentage = 65;
